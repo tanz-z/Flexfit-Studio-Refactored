@@ -57,10 +57,17 @@ If you're changing anything in `src/db/schema.ts`, run `pnpm db:push` afterwards
 
 ```
 src/
-  app/          routes and pages
-  components/   shared components
-  db/           schema, client, seed data
-  lib/          helpers
-  server/       tRPC routers
-documents/      empty, for your own notes
+  app/              routes and pages
+  components/
+    features/       page-specific UI (dashboard, trainer)
+  db/               schema, client, seed data
+  lib/              client-side helpers
+  server/
+    lib/            shared server utilities and constants
+    services/       business logic (bookings, reschedules, corporate)
+    trpc/           tRPC context and procedure middleware
+    routers/        thin tRPC route adapters
+documents/          refactor notes and feature inventory
 ```
+
+See `documents/REFACTOR.md` for a full explanation of the restructure.
